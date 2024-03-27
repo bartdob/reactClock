@@ -16,28 +16,25 @@ function App() {
     };
   }, []);
 
+  function ifZero(num: number) {
+    return (num < 10 ? "0" : "") + num;
+  }
+
   function formatTime() {
     let hours = time.getHours();
+    // hours = hours % 12 || 12;
     let minutes = time.getMinutes();
     let sec = time.getSeconds();
+
     const meridiem = hours >= 12 ? "PM" : "AM";
-
-    if (minutes < 10) {
-      "0" + minutes;
-    }
-
-    hours = hours % 12 || 12;
-    if (hours < 10) {
-      `0${hours}`;
-    }
-    console.log(hours);
-    return `${hours}:${minutes}:${sec} '${meridiem}`;
+    return `${hours}:${ifZero(minutes)}:${ifZero(sec)} '${meridiem}`;
   }
 
   return (
     <>
-      <p>time</p>
-      <Clock time={formatTime()} />
+      <div className="container" id="center">
+        <Clock time={formatTime()} />
+      </div>
     </>
   );
 }

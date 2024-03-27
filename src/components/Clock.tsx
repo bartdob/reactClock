@@ -12,7 +12,7 @@ function Clock(props: any) {
           maxWidth: "auto",
         }}
       >
-        <h2>{props.time}</h2>
+        <h2 style={{ fontSize: "80px" }}>{props.time}</h2>
       </div>
     </>
   );
