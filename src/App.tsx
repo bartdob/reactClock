@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-// import reactLogo from './assets/react.svg'
 import "./App.css";
 import Clock from "./components/Clock.tsx";
+import TimerClock from "./components/TimerClock.tsx";
 
 function App() {
   const [time, setTime] = useState(new Date());
@@ -34,6 +34,7 @@ function App() {
     <>
       <div className="container" id="center">
         <Clock time={formatTime()} />
+        <TimerClock/>
       </div>
     </>
   );
